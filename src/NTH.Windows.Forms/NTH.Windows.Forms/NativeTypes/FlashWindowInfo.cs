@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace NTH.Windows.Forms.NativeTypes
 {
@@ -12,22 +9,22 @@ namespace NTH.Windows.Forms.NativeTypes
         public UInt32 Size;
         public IntPtr WindowHandle;
         public FlashWindowFlags Flags;
-        public UInt32 Count;
-        public UInt32 Timeout;
+        public UInt32 FlashCount;
+        public UInt32 FlashRate;
 
         public FlashWindowInfo(IntPtr handle)
             : this(handle, FlashWindowFlags.TimerNoForeground | FlashWindowFlags.Tray, UInt32.MaxValue)
         { }
-        public FlashWindowInfo(IntPtr handle, FlashWindowFlags flags, uint count)
-            : this(handle, flags, count, 0)
+        public FlashWindowInfo(IntPtr handle, FlashWindowFlags flags, uint flashCount)
+            : this(handle, flags, flashCount, 0)
         { }
-        public FlashWindowInfo(IntPtr handle, FlashWindowFlags flags, uint count, uint timeout)
+        public FlashWindowInfo(IntPtr handle, FlashWindowFlags flags, uint flashCount, uint flashRate)
         {
             Size = Convert.ToUInt32(Marshal.SizeOf(typeof(FlashWindowInfo)));
             WindowHandle = handle;
             Flags = flags;
-            Count = count;
-            Timeout = timeout;
+            FlashCount = flashCount;
+            FlashRate = flashRate;
         }
 
         public void Flash()

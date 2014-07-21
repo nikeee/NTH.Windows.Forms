@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NativeMethods.cs" />
-    <Compile Include="NativeTypes\FlashWindowFlags.cs" />
+    <Compile Include="FlashWindowFlags.cs" />
     <Compile Include="NativeTypes\FlashWindowInfo.cs" />
     <Compile Include="NthForm.cs">
       <SubType>Form</SubType>
