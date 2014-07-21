@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrativeBanner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExtensions.cs" />
+    <Compile Include="IconExtensions.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="FlashWindowFlags.cs" />
     <Compile Include="NativeTypes\ExtendedWindowStyles.cs" />

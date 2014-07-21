@@ -13,9 +13,9 @@ namespace NTH.Windows.Forms
 
         public NthLinkLabel()
         {
-            base.LinkBehavior = NthDefaultLinkBehavior;
-            base.LinkColor = NthDefaultLinkColor;
-            base.ActiveLinkColor = NthDefaultActiveLinkColor;
+            LinkBehavior = NthDefaultLinkBehavior;
+            LinkColor = NthDefaultLinkColor;
+            ActiveLinkColor = NthDefaultActiveLinkColor;
             base.Cursor = NthDefaultCursor;
         }
 

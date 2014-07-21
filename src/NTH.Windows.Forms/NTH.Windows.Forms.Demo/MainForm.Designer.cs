@@ -33,6 +33,7 @@
             this.verticalProgressBar1 = new NTH.Windows.Forms.VerticalProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.nthLinkLabel1 = new NTH.Windows.Forms.NthLinkLabel();
+            this.administrativeBanner1 = new NTH.Windows.Forms.AdministrativeBanner();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +85,20 @@
             this.nthLinkLabel1.TabStop = true;
             this.nthLinkLabel1.Text = "Link label like the explorer one";
             // 
+            // administrativeBanner1
+            // 
+            this.administrativeBanner1.Location = new System.Drawing.Point(32, 256);
+            this.administrativeBanner1.Name = "administrativeBanner1";
+            this.administrativeBanner1.Size = new System.Drawing.Size(250, 33);
+            this.administrativeBanner1.TabIndex = 5;
+            this.administrativeBanner1.Text = "administrativeBanner1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 301);
+            this.Controls.Add(this.administrativeBanner1);
             this.Controls.Add(this.nthLinkLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.verticalProgressBar1);
@@ -108,6 +118,7 @@
         private VerticalProgressBar verticalProgressBar1;
         private System.Windows.Forms.Button button1;
         private NthLinkLabel nthLinkLabel1;
+        private AdministrativeBanner administrativeBanner1;
 
     }
 }
