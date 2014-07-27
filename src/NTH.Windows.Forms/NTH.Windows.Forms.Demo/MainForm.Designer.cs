@@ -67,7 +67,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "minimize and flash";
+            this.button1.Text = "minimize and flash 3 times";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1Click);
             // 

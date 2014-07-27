@@ -13,7 +13,7 @@ namespace NTH.Windows.Forms.Demo
         private void Button1Click(object sender, System.EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-            this.Flash();
+            this.Flash(3);
         }
     }
 }
