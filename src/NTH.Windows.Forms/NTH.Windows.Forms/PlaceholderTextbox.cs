@@ -10,7 +10,7 @@ namespace NTH.Windows.Forms
         private string _placeholder;
 
         [Browsable(true)]
-        [Description("The placeholder text which is being displayed if no text is intered.")]
+        [Description("The placeholder text which is being displayed if no text is entered.")]
         public string Placeholder
         {
             get
