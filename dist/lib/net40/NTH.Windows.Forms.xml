@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NTH.Windows.Forms</name>
+    </assembly>
+    <members>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.Stop">
+            <summary>Stop flashing. The system restores the window to its original state.</summary>
+        </member>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.Caption">
+            <summary>Flash the window caption.</summary>
+        </member>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.Tray">
+            <summary>Flash the taskbar button.</summary>
+        </member>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.All">
+            <summary>
+            Flash both the window caption and taskbar button.
+            This is equivalent to setting the FlashWindowFlags.Caption | FlashWindowFlags.Tray flags.
+            </summary>
+        </member>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.Timer">
+            <summary>Flash continuously, until the FlashWindowFlags.Stop flag is set.</summary>
+        </member>
+        <member name="F:NTH.Windows.Forms.FlashWindowFlags.TimerNoForeground">
+            <summary>Flash continuously until the window comes to the foreground.</summary>
+        </member>
+    </members>
+</doc>
