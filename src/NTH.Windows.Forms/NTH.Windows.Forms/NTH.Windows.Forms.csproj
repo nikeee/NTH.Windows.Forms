@@ -41,7 +41,7 @@
     <DocumentationFile>bin\Distribution\NTH.Windows.Forms.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>NTH-Key.pfx</AssemblyOriginatorKeyFile>
@@ -67,6 +67,7 @@
     <Compile Include="FlashWindowFlags.cs" />
     <Compile Include="NativeTypes\ExtendedWindowStyles.cs" />
     <Compile Include="NativeTypes\FlashWindowInfo.cs" />
+    <Compile Include="NativeTypes\ITaskbarList.cs" />
     <Compile Include="NativeTypes\WindowMessages.cs" />
     <Compile Include="NthForm.cs">
       <SubType>Form</SubType>
