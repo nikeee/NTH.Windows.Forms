@@ -68,6 +68,9 @@
     <Compile Include="NativeTypes\ExtendedWindowStyles.cs" />
     <Compile Include="NativeTypes\FlashWindowInfo.cs" />
     <Compile Include="NativeTypes\ITaskbarList.cs" />
+    <Compile Include="NativeTypes\ITaskbarList2.cs" />
+    <Compile Include="NativeTypes\ITaskbarList3.cs" />
+    <Compile Include="NativeTypes\ITaskbarList4.cs" />
     <Compile Include="NativeTypes\WindowMessages.cs" />
     <Compile Include="NthForm.cs">
       <SubType>Form</SubType>
