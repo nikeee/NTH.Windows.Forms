@@ -24,7 +24,6 @@ namespace NTH.Windows.Forms
         /// <remarks>See: https://code.msdn.microsoft.com/windowsapps/Enumerate-top-level-9aa9d7c1 </remarks>
         public static IList<WindowItem> EnumerateWindows()
         {
-            //NativeMethods.EnumWindows(EnumTheWindows, IntPtr.Zero);
             var list = new List<WindowItem>();
             NativeMethods.EnumWindows((handle, lParam) =>
                                       {
