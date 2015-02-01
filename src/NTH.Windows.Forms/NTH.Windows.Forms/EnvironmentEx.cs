@@ -20,8 +20,9 @@ namespace NTH.Windows.Forms
                 if (!IsDwmSupported)
                     return false;
                 bool isEnabled;
-                if (NativeMethods.DwmIsCompositionEnabled(out isEnabled) != 0)
-                    throw new Win32Exception();
+                int result;
+                if ((result = NativeMethods.DwmIsCompositionEnabled(out isEnabled)) != 0)
+                    throw new Win32Exception(result);
                 return isEnabled;
             }
         }
