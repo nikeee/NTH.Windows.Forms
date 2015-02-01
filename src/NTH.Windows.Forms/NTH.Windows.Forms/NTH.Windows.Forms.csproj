@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="ControlExtensions.cs" />
     <Compile Include="CredentialDialog.cs" />
+    <Compile Include="Credentials.cs" />
     <Compile Include="EnvironmentEx.cs" />
     <Compile Include="IconExtensions.cs" />
     <Compile Include="NativeMethods.cs" />
