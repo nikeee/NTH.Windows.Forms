@@ -8,6 +8,7 @@ namespace NTH.Windows.Forms
     internal static class NativeMethods
     {
         private const string User32 = "User32.dll";
+        private const string DwmApi = "dwmapi.dll";
 
         [DllImport(User32)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -30,6 +31,9 @@ namespace NTH.Windows.Forms
 
         [DllImport(User32)]
         internal static extern bool IsWindowVisible(IntPtr hWnd);
+
+        [DllImport(DwmApi)]
+        internal static extern int DwmIsCompositionEnabled(out bool enabled);
     }
 
     internal delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);

@@ -44,7 +44,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>NTH-Key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,6 +63,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ControlExtensions.cs" />
+    <Compile Include="EnvironmentEx.cs" />
     <Compile Include="IconExtensions.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="FlashWindowFlags.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="NthLinkLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OsVersions.cs" />
     <Compile Include="PlaceholderTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,9 +89,6 @@
     <Compile Include="WindowItem.cs" />
     <Compile Include="WindowUtil.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="NTH-Key.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
