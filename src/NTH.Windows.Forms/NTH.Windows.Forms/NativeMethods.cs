@@ -1,7 +1,7 @@
-﻿using System;
-using System.Text;
-using NTH.Windows.Forms.NativeTypes;
+﻿using NTH.Windows.Forms.NativeTypes;
+using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace NTH.Windows.Forms
 {
@@ -9,6 +9,7 @@ namespace NTH.Windows.Forms
     {
         private const string User32 = "User32.dll";
         private const string DwmApi = "dwmapi.dll";
+        private const string CredUi = "credui.dll";
 
         [DllImport(User32)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -34,6 +35,18 @@ namespace NTH.Windows.Forms
 
         [DllImport(DwmApi)]
         internal static extern int DwmIsCompositionEnabled(out bool enabled);
+
+        [DllImport(CredUi)]
+        internal static extern CredentialUiReturnCodes CredUIPromptForCredentials(ref CredentialUiInfo creditUR,
+              string targetName,
+              IntPtr reserved1,
+              int iError,
+              StringBuilder userName,
+              int maxUserName,
+              StringBuilder password,
+              int maxPassword,
+              [MarshalAs(UnmanagedType.Bool)] ref bool pfSave,
+              CredentialUiFlags flags);
     }
 
     internal delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);

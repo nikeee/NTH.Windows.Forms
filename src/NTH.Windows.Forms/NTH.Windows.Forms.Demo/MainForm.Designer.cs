@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.nthLinkLabel1 = new NTH.Windows.Forms.NthLinkLabel();
             this.administrativeBanner1 = new NTH.Windows.Forms.AdministrativeBanner();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -93,11 +94,22 @@
             this.administrativeBanner1.TabIndex = 5;
             this.administrativeBanner1.Text = "administrativeBanner1";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(32, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(211, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "prompt for credentials";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 301);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.administrativeBanner1);
             this.Controls.Add(this.nthLinkLabel1);
             this.Controls.Add(this.button1);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Button button1;
         private NthLinkLabel nthLinkLabel1;
         private AdministrativeBanner administrativeBanner1;
+        private System.Windows.Forms.Button button2;
 
     }
 }

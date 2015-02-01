@@ -63,10 +63,14 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ControlExtensions.cs" />
+    <Compile Include="CredentialDialog.cs" />
     <Compile Include="EnvironmentEx.cs" />
     <Compile Include="IconExtensions.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="FlashWindowFlags.cs" />
+    <Compile Include="NativeTypes\CredentialUiInfo.cs" />
+    <Compile Include="NativeTypes\CredentialUiFlags.cs" />
+    <Compile Include="NativeTypes\CredentialUiReturnCodes.cs" />
     <Compile Include="NativeTypes\ExtendedWindowStyles.cs" />
     <Compile Include="NativeTypes\FlashWindowInfo.cs" />
     <Compile Include="NativeTypes\WindowMessages.cs" />
