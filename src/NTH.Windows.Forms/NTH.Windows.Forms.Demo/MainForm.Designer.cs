@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("P", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("N", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("P", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("N", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "nikeee",
             "Gemany"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "ProgTrade",
             "Germany"}, -1);
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,9 @@
             this.nthListView1 = new NTH.Windows.Forms.NthListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +64,7 @@
             this.placeholderTextbox1.Location = new System.Drawing.Point(32, 67);
             this.placeholderTextbox1.Name = "placeholderTextbox1";
             this.placeholderTextbox1.Placeholder = "this is a placeholder";
+            this.placeholderTextbox1.RetainPlaceholderOnFocus = false;
             this.placeholderTextbox1.Size = new System.Drawing.Size(211, 23);
             this.placeholderTextbox1.TabIndex = 1;
             // 
@@ -106,22 +110,23 @@
             // 
             // nthListView1
             // 
+            this.nthListView1.AreGroupsCollapsable = false;
             this.nthListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
             this.nthListView1.FullRowSelect = true;
-            listViewGroup3.Header = "P";
-            listViewGroup3.Name = "listViewGroup1";
-            listViewGroup4.Header = "N";
-            listViewGroup4.Name = "listViewGroup2";
+            listViewGroup1.Header = "P";
+            listViewGroup1.Name = "listViewGroup1";
+            listViewGroup2.Header = "N";
+            listViewGroup2.Name = "listViewGroup2";
             this.nthListView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
-            listViewItem3.Group = listViewGroup4;
-            listViewItem4.Group = listViewGroup3;
+            listViewGroup1,
+            listViewGroup2});
+            listViewItem1.Group = listViewGroup2;
+            listViewItem2.Group = listViewGroup1;
             this.nthListView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
             this.nthListView1.Location = new System.Drawing.Point(32, 166);
             this.nthListView1.Name = "nthListView1";
             this.nthListView1.Size = new System.Drawing.Size(423, 229);
@@ -139,11 +144,47 @@
             this.columnHeader2.Text = "Location";
             this.columnHeader2.Width = 209;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(31, 430);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(147, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Make uncollapsable";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(32, 401);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Make collapsable";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(249, 71);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(173, 19);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Retain placeholder on focus";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 465);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.nthListView1);
             this.Controls.Add(this.administrativeBanner1);
             this.Controls.Add(this.nthLinkLabel1);
@@ -170,6 +211,9 @@
         private NthListView nthListView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox checkBox1;
 
     }
 }
