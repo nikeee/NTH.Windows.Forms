@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NTH.Windows.Forms
+namespace NTH.Windows.Forms.NativeTypes
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    public struct NthListViewGroup
+    internal struct NthListViewGroup
     {
         public int CbSize;
         public NthListViewGroupMask Mask;
@@ -37,7 +37,7 @@ namespace NTH.Windows.Forms
         public IntPtr CchSubsetTitle;
     }
 
-    public enum NthListViewGroupMask
+    internal enum NthListViewGroupMask
     {
         None = 0x0,
         Header = 0x1,
@@ -56,7 +56,7 @@ namespace NTH.Windows.Forms
         SubsetItems = 0x10000
     }
 
-    public enum NthListViewGroupState
+    internal enum NthListViewGroupState
     {
         Normal = 0,
         Collapsed = 1,

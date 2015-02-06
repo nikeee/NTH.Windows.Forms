@@ -21,10 +21,10 @@ namespace NTH.Windows.Forms
         [DllImport(User32, CharSet = CharSet.Unicode)]
         internal static extern IntPtr SendMessage(IntPtr windowHandle, WindowMessage message, IntPtr wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
-        [DllImport(User32, CharSet = CharSet.Auto)]
+        [DllImport(User32, CharSet = CharSet.Unicode)]
         public static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport(User32, CharSet = CharSet.Auto)]
         public static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, ref NthListViewGroup lParam);
 
         [DllImport(User32, CharSet = CharSet.Unicode)]
