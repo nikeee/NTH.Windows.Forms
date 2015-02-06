@@ -33,9 +33,14 @@ namespace NTH.Windows.Forms
 
         private void UpdatePlaceholder()
         {
-            var currentHandle = Handle;
-            if (currentHandle != IntPtr.Zero)
-                NativeMethods.SendMessage(currentHandle, WindowMessage.EM_SETCUEBANNER, IntPtr.Zero, _placeholder);
+            if (IsHandleCreated)
+                NativeMethods.SendMessage(Handle, WindowMessage.EM_SETCUEBANNER, new IntPtr(1), _placeholder);
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            UpdatePlaceholder();
         }
     }
 }

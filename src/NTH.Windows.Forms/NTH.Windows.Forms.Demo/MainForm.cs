@@ -15,5 +15,10 @@ namespace NTH.Windows.Forms.Demo
             WindowState = FormWindowState.Minimized;
             this.Flash(3);
         }
+
+        private void MainForm_Shown(object sender, System.EventArgs e)
+        {
+            nthListView1.MakeCollapsable();
+        }
     }
 }

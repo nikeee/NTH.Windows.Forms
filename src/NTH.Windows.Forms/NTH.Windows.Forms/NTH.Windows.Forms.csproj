@@ -76,6 +76,10 @@
     <Compile Include="NthLinkLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NthListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NthListViewGroup.cs" />
     <Compile Include="OsVersions.cs" />
     <Compile Include="PlaceholderTextbox.cs">
       <SubType>Component</SubType>

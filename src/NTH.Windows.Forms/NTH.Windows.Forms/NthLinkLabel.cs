@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace NTH.Windows.Forms
 {
-    public class NthLinkLabel : LinkLabel
+    public sealed class NthLinkLabel : LinkLabel
     {
         private const LinkBehavior NthDefaultLinkBehavior = LinkBehavior.HoverUnderline;
         private static readonly Color NthDefaultLinkColor = SystemColors.HotTrack;
@@ -16,7 +16,7 @@ namespace NTH.Windows.Forms
             LinkBehavior = NthDefaultLinkBehavior;
             LinkColor = NthDefaultLinkColor;
             ActiveLinkColor = NthDefaultActiveLinkColor;
-            base.Cursor = NthDefaultCursor;
+            Cursor = NthDefaultCursor; // Class is marked as sealed because of virtual member call in ctor (can of course be changed)
         }
 
         protected override void OnMouseEnter(EventArgs e)
