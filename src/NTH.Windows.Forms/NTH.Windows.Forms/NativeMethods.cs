@@ -1,7 +1,7 @@
-﻿using System;
+﻿using NTH.Windows.Forms.NativeTypes;
+using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using NTH.Windows.Forms.NativeTypes;
 
 namespace NTH.Windows.Forms
 {

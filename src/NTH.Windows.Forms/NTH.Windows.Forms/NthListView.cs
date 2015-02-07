@@ -1,8 +1,8 @@
-﻿using System;
+﻿using NTH.Windows.Forms.NativeTypes;
+using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using NTH.Windows.Forms.NativeTypes;
 
 namespace NTH.Windows.Forms
 {
