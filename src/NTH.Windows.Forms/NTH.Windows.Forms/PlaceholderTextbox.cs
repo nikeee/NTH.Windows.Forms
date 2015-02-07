@@ -8,6 +8,7 @@ namespace NTH.Windows.Forms
     public class PlaceholderTextbox : TextBox
     {
         private string _placeholder;
+        private bool _retainPlaceholderOnFocus;
 
         [Browsable(true)]
         [Description("The placeholder text which is being displayed if no text is entered.")]
@@ -26,6 +27,18 @@ namespace NTH.Windows.Forms
             }
         }
 
+        public bool RetainPlaceholderOnFocus
+        {
+            get { return _retainPlaceholderOnFocus; }
+            set
+            {
+                if (_retainPlaceholderOnFocus == value)
+                    return;
+                _retainPlaceholderOnFocus = value;
+                UpdatePlaceholder();
+            }
+        }
+
         public PlaceholderTextbox()
         {
             UpdatePlaceholder();
@@ -33,9 +46,14 @@ namespace NTH.Windows.Forms
 
         private void UpdatePlaceholder()
         {
-            var currentHandle = Handle;
-            if (currentHandle != IntPtr.Zero)
-                NativeMethods.SendMessage(currentHandle, WindowMessage.EM_SETCUEBANNER, IntPtr.Zero, _placeholder);
+            if (IsHandleCreated)
+                NativeMethods.SendMessage(Handle, WindowMessage.EM_SETCUEBANNER, new IntPtr(_retainPlaceholderOnFocus ? 1 : 0), _placeholder);
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            UpdatePlaceholder();
         }
     }
 }
