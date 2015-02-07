@@ -8,9 +8,6 @@ namespace NTH.Windows.Forms
 {
     public class NthListView : ListView
     {
-        private const int LVM_FIRST = 0x1000;
-        private const int LVM_SETEXTENDEDLISTVIEWSTYLE = LVM_FIRST + 54;
-        private const int LVS_EX_DOUBLEBUFFER = 0x00010000;
         private bool _isExplorerListView;
         private bool _areGroupsCollapsable;
 
@@ -39,9 +36,6 @@ namespace NTH.Windows.Forms
             if (Environment.OSVersion.Version.Major < 6)
                 return;
 
-            const int lvmFirst = 0x1000;
-            const int LVM_SETGROUPINFO = (lvmFirst + 147);
-
             foreach (ListViewGroup group in Groups)
             {
                 var placeHolderGroup = new NthListViewGroup();
@@ -53,7 +47,7 @@ namespace NTH.Windows.Forms
                 if (placeHolderGroup.GroupId < 0)
                     continue;
 
-                NativeMethods.SendMessage(Handle, LVM_SETGROUPINFO, new IntPtr(placeHolderGroup.GroupId), ref placeHolderGroup);
+                NativeMethods.SendMessage(Handle, (int)LVM.LVM_SETGROUPINFO, new IntPtr(placeHolderGroup.GroupId), ref placeHolderGroup);
                 // TODO: Verify if the object is directly handled over by reference or just copied
 
             }
@@ -85,13 +79,22 @@ namespace NTH.Windows.Forms
                     if (!_isExplorerListView)
                     {
                         NativeMethods.SetWindowTheme(Handle, "explorer", null);
-                        NativeMethods.SendMessage(Handle, LVM_SETEXTENDEDLISTVIEWSTYLE, new IntPtr(LVS_EX_DOUBLEBUFFER), new IntPtr(LVS_EX_DOUBLEBUFFER));
+                        NativeMethods.SendMessage(Handle, (int)LVM.LVM_SETEXTENDEDLISTVIEWSTYLE, new IntPtr((int)LVM.LVS_EX_DOUBLEBUFFER), new IntPtr((int)LVM.LVS_EX_DOUBLEBUFFER));
                         _isExplorerListView = true;
                     }
                     break;
             }
 
             base.WndProc(ref m);
+        }
+
+
+        private enum LVM
+        {
+            LVM_FIRST = 0x1000,
+            LVM_SETEXTENDEDLISTVIEWSTYLE = LVM_FIRST + 0x36,
+            LVS_EX_DOUBLEBUFFER = 0x00010000,
+            LVM_SETGROUPINFO = LVM_FIRST + 0x93
         }
     }
 }
