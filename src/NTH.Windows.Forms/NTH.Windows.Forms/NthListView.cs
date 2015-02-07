@@ -27,7 +27,7 @@ namespace NTH.Windows.Forms
             get { return _areGroupsCollapsable; }
             set
             {
-                if (_areGroupsCollapsable == value) 
+                if (_areGroupsCollapsable == value)
                     return;
                 _areGroupsCollapsable = value; // Or just initialize with the negated value, but "value" is shorter :)
                 SetCollapsableState();
@@ -50,27 +50,27 @@ namespace NTH.Windows.Forms
                 placeHolderGroup.Mask = NthListViewGroupMask.State;
                 placeHolderGroup.GroupId = GetGroupId(group);
 
-                if (placeHolderGroup.GroupId < 0) 
+                if (placeHolderGroup.GroupId < 0)
                     continue;
-                //var handle = GCHandle.Alloc(placeHolderGroup, GCHandleType.Pinned);
-                NativeMethods.SendMessage(Handle, LVM_SETGROUPINFO, new IntPtr(placeHolderGroup.GroupId),
-                    ref placeHolderGroup);
+
+                NativeMethods.SendMessage(Handle, LVM_SETGROUPINFO, new IntPtr(placeHolderGroup.GroupId), ref placeHolderGroup);
                 // TODO: Verify if the object is directly handled over by reference or just copied
-                //handle.Free();
+
             }
         }
 
         private static int GetGroupId(ListViewGroup group)
         {
             var groupType = group.GetType();
-            {
-                var groupIdProperty = groupType.GetProperty("ID", BindingFlags.NonPublic | BindingFlags.Instance); // Include inner fields and instance members
-                if (groupIdProperty == null)
-                    return -1;
-                var value = groupIdProperty.GetValue(group, null);
-                if (value != null)
-                    return (int)value;
-            }
+
+            // Include inner fields and instance members
+            var groupIdProperty = groupType.GetProperty("ID", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (groupIdProperty == null)
+                return -1;
+            var value = groupIdProperty.GetValue(group, null);
+            if (value != null)
+                return (int)value;
+
             return -1;
         }
 
