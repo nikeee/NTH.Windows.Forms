@@ -76,8 +76,7 @@ namespace NTH.Windows.Forms
 
         protected override void WndProc(ref Message m)
         {
-            const int WM_LBUTTONUP = 0x202;
-            if (m.Msg == WM_LBUTTONUP && Environment.OSVersion.Version.Major >= 6)
+            if (m.Msg == (int)WindowMessage.WM_LBUTTONUP && Environment.OSVersion.Version >= OsVersions.Vista)
                 DefWndProc(ref m);
 
             switch (m.Msg)
@@ -86,8 +85,7 @@ namespace NTH.Windows.Forms
                     if (!_isExplorerListView)
                     {
                         NativeMethods.SetWindowTheme(Handle, "explorer", null);
-                        NativeMethods.SendMessage(Handle, LVM_SETEXTENDEDLISTVIEWSTYLE, new IntPtr(LVS_EX_DOUBLEBUFFER),
-                            new IntPtr(LVS_EX_DOUBLEBUFFER));
+                        NativeMethods.SendMessage(Handle, LVM_SETEXTENDEDLISTVIEWSTYLE, new IntPtr(LVS_EX_DOUBLEBUFFER), new IntPtr(LVS_EX_DOUBLEBUFFER));
                         _isExplorerListView = true;
                     }
                     break;
