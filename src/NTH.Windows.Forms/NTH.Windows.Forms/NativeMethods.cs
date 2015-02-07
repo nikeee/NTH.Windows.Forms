@@ -15,6 +15,8 @@ namespace NTH.Windows.Forms
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool FlashWindowEx(ref FlashWindowInfo flashWindowInfo);
 
+        #region SendMessage
+
         [DllImport(User32, CharSet = CharSet.Unicode)]
         internal static extern IntPtr SendMessage(IntPtr windowHandle, WindowMessage message, IntPtr wParam, IntPtr lParam);
 
@@ -22,10 +24,12 @@ namespace NTH.Windows.Forms
         internal static extern IntPtr SendMessage(IntPtr windowHandle, WindowMessage message, IntPtr wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
         [DllImport(User32, CharSet = CharSet.Unicode)]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport(User32, CharSet = CharSet.Auto)]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, ref NthListViewGroup lParam);
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, ref NthListViewGroup lParam);
+
+        #endregion
 
         [DllImport(User32, CharSet = CharSet.Unicode)]
         internal static extern int GetWindowText(IntPtr hWnd, StringBuilder strText, int maxCount);
@@ -34,7 +38,7 @@ namespace NTH.Windows.Forms
         internal static extern int GetWindowTextLength(IntPtr hWnd);
 
         [DllImport(UxTheme, CharSet = CharSet.Unicode)]
-        public static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
+        internal static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
 
         [DllImport(User32)]
         internal static extern bool EnumWindows(EnumWindowsProc enumProc, IntPtr lParam);
